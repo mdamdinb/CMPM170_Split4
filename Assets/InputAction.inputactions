@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "name": "InputAction",
+    "maps": [
+        {
+            "name": "ActionMap",
+            "id": "c7a1726d-96be-47e5-a2d6-ebd4279de281",
+            "actions": [
+                {
+                    "name": "shoot",
+                    "type": "Button",
+                    "id": "d1154316-b7f8-42e3-8f6f-769e28721877",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e87c6fbf-1c58-4f40-af49-cc1947cf9795",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da32ad94-17e6-4206-9af7-eb114ba29600",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
