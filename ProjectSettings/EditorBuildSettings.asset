@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BrodyBlasterTest.unity
     guid: b6b40d080e58a4a2bac4123b739c7fba
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ce6eecdc7960944daa632a5c53ab786e
+  - enabled: 1
+    path: Assets/Scenes/Miga Scene.unity
+    guid: 8c0272930470c4326898cc3df04bdc6b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
