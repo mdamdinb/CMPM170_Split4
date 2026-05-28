@@ -18,7 +18,7 @@ public class GameOverUI : MonoBehaviour
 
     [Header("Buttons")]
     public Button mainMenuButton;
-    public Button playAgainButton;         
+    public Button playAgainButton;       
 
     [Header("Settings")]
     public string mainMenuSceneName = "MainMenu";
@@ -45,9 +45,12 @@ public class GameOverUI : MonoBehaviour
 
     public void ShowGameOver()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         int currentScore = ScoreManager.Instance != null ? ScoreManager.Instance.GetScore() : 0;
-        int highScore    = PlayerPrefs.GetInt(HIGH_SCORE_KEY, 0);
-        bool isNewHigh   = currentScore > highScore;
+        int highScore = PlayerPrefs.GetInt(HIGH_SCORE_KEY, 0);
+        bool isNewHigh = currentScore > highScore;
 
         if (isNewHigh)
         {
@@ -56,8 +59,8 @@ public class GameOverUI : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        if (currentScoreText  != null) currentScoreText.text  = currentScore.ToString();
-        if (highScoreText     != null) highScoreText.text     = highScore.ToString();
+        if (currentScoreText != null) currentScoreText.text = currentScore.ToString();
+        if (highScoreText != null) highScoreText.text = highScore.ToString();
         if (newHighScoreBanner != null) newHighScoreBanner.gameObject.SetActive(isNewHigh);
 
         overlayPanel.SetActive(true);
@@ -72,19 +75,21 @@ public class GameOverUI : MonoBehaviour
         overlayPanel.SetActive(false);
     }
 
-    void GoToMainMenu()
+
+    public void GoToMainMenu()
     {
-        Time.timeScale = 1f;
         if (ScoreManager.Instance != null) ScoreManager.Instance.ResetScore();
+        Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
-    void PlayAgain()
+    public void PlayAgain()
     {
-        Time.timeScale = 1f;
         if (ScoreManager.Instance != null) ScoreManager.Instance.ResetScore();
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 
     IEnumerator AnimateIn()
     {
