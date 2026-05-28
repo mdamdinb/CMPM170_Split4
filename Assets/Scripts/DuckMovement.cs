@@ -46,15 +46,45 @@ public class DuckMovement : MonoBehaviour
 
     public void SetDuckData(DuckData data)
     {
+        Debug.Log("SetDuckData called");
         duckData = data;
 
-        if (targetObject != null && duckData != null && duckData.image != null)
+        if (duckData == null)
         {
-            DuckTarget target = targetObject.GetComponent<DuckTarget>();
+            Debug.LogWarning("duckData is null");
+            return;
+        }
+
+        Debug.Log($"DuckData: {duckData.name}, Image: {(duckData.image != null ? duckData.image.name : "null")}");
+
+        if (duckData.image != null)
+        {
+            DuckTarget target = null;
+
+            if (targetObject != null)
+            {
+                Debug.Log("Using assigned targetObject");
+                target = targetObject.GetComponent<DuckTarget>();
+            }
+            else
+            {
+                Debug.Log("Searching for DuckTarget in children");
+                target = GetComponentInChildren<DuckTarget>();
+            }
+
             if (target != null)
             {
+                Debug.Log("Found DuckTarget, calling ApplyTexture");
                 target.ApplyTexture(duckData.image);
             }
+            else
+            {
+                Debug.LogWarning("DuckTarget not found!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("duckData.image is null");
         }
     }
 }
