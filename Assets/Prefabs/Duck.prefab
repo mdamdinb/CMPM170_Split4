@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801010570041028256}
   - component: {fileID: 3585625489969740256}
+  - component: {fileID: 4261639404857906339}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Untagged
@@ -157,10 +158,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f198c0c17cdb48bb930f1e0046849b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PopUpDuck
-  popUpDelay: 1
   popUpDuration: 0.5
   upRotation: 90
-  pointValue: 15
+--- !u!114 &4261639404857906339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091005059459421957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6db1e88e6cc464ab989506a9a6d68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DuckMovement
+  duckData: {fileID: 0}
+  targetObject: {fileID: 0}
 --- !u!1 &5828420962645975214
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +186,6 @@ GameObject:
   - component: {fileID: 3897097690352378511}
   - component: {fileID: 9026004495852489998}
   - component: {fileID: 8717039148972165089}
-  - component: {fileID: 552208945543949274}
   - component: {fileID: 2583780647269433853}
   m_Layer: 0
   m_Name: Target
@@ -277,20 +289,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &552208945543949274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5828420962645975214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f6db1e88e6cc464ab989506a9a6d68c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DuckMovement
-  duckData: {fileID: 0}
-  targetObject: {fileID: 0}
 --- !u!114 &2583780647269433853
 MonoBehaviour:
   m_ObjectHideFlags: 0

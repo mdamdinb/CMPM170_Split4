@@ -21,18 +21,34 @@ public class DuckTarget : MonoBehaviour
 
     public void ApplyTexture(Sprite sprite)
     {
-        if (sprite == null) return;
-
-        if (meshRenderer == null)
+        if (sprite == null)
         {
-            meshRenderer = GetComponent<MeshRenderer>();
+            Debug.LogWarning("ApplyTexture called with null sprite");
+            return;
         }
 
-        if (meshRenderer != null)
+        Debug.Log($"Applying texture: {sprite.name}");
+
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
         {
-            Material newMaterial = new Material(meshRenderer.material);
-            newMaterial.mainTexture = sprite.texture;
-            meshRenderer.material = newMaterial;
+            Debug.Log("Found SpriteRenderer, applying sprite");
+            spriteRenderer.sprite = sprite;
+        }
+        else
+        {
+            Debug.Log("No SpriteRenderer, trying MeshRenderer");
+            if (meshRenderer == null)
+            {
+                meshRenderer = GetComponent<MeshRenderer>();
+            }
+
+            if (meshRenderer != null)
+            {
+                Material newMaterial = new Material(meshRenderer.material);
+                newMaterial.mainTexture = sprite.texture;
+                meshRenderer.material = newMaterial;
+            }
         }
     }
 }
