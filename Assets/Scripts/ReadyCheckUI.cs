@@ -19,6 +19,7 @@ public class ReadyCheckUI : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         readyCheckPanel.SetActive(false);
         if (mainMenuPanel != null)
             mainMenuPanel.SetActive(true);
@@ -26,6 +27,7 @@ public class ReadyCheckUI : MonoBehaviour
 
     public void StartReadyCheck()
     {
+        Time.timeScale = 1f;
         readyCheckPanel.SetActive(true);
         playerIsReady = false;
 
@@ -76,7 +78,7 @@ public class ReadyCheckUI : MonoBehaviour
     private IEnumerator LoadGameAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("BrodyBlasterTest");
+        SceneManager.LoadScene("Miga Scene");
     }
 
     private void OnTimerExpired()
