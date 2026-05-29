@@ -59,8 +59,8 @@ public class GameOverUI : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        if (currentScoreText != null) currentScoreText.text = currentScore.ToString();
-        if (highScoreText != null) highScoreText.text = highScore.ToString();
+        if (currentScoreText != null) currentScoreText.text = "Score: " + currentScore.ToString();
+        if (highScoreText != null) highScoreText.text = "High Score: " + highScore.ToString();
         if (newHighScoreBanner != null) newHighScoreBanner.gameObject.SetActive(isNewHigh);
 
         overlayPanel.SetActive(true);

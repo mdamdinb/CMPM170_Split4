@@ -34,6 +34,8 @@ public class Hud : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Time.timeScale = 1f;
     }
 
     private void Update()
@@ -45,6 +47,11 @@ public class Hud : MonoBehaviour
         else
         {
             timerSeconds = Mathf.Max(0f, timerSeconds - Time.deltaTime);
+
+            if (timerSeconds <= 0f && GameOverUI.Instance != null)
+            {
+                GameOverUI.Instance.ShowGameOver();
+            }
         }
     }
 

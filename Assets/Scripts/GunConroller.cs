@@ -28,7 +28,7 @@ public class GunController : MonoBehaviour
 
     void Update()
     {
-        if (mouse == null) return;
+        if (mouse == null || Time.timeScale == 0f) return;
         HandleAiming();
     }
 
