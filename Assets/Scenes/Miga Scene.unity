@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 77f9c6b057eab4f90aa60afc5a1b5570, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1837,7 +1837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Hud
   ammoCount: 500
   maxAmmoCount: 500
-  timerSeconds: 10
+  timerSeconds: 60
   maxTimerSeconds: 60
   gold: 0
   countTimerUp: 0
@@ -2122,7 +2122,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f063745afd4d417f8c4773723a6bb1e, type: 2}
   - {fileID: 11400000, guid: 81323188349704bceb9eefd0d2cfed22, type: 2}
   spawnInterval: 2
-  maxDucks: 50
+  maxDucks: 30
   moveBackward: 0
 --- !u!4 &660907161
 Transform:
@@ -8668,7 +8668,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f063745afd4d417f8c4773723a6bb1e, type: 2}
   - {fileID: 11400000, guid: 81323188349704bceb9eefd0d2cfed22, type: 2}
   spawnInterval: 2
-  maxDucks: 50
+  maxDucks: 30
   moveBackward: 1
 --- !u!4 &1924636562
 Transform:

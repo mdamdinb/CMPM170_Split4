@@ -52,6 +52,19 @@ public class PopUpDuck : MonoBehaviour
         {
             isHit = true;
             StartCoroutine(FoldForward());
+
+            // Play hit sound
+            if (metalHitSound != null)
+            {
+                if (metalHitClip != null)
+                {
+                    metalHitSound.PlayOneShot(metalHitClip);
+                }
+                else if (metalHitSound.clip != null)
+                {
+                    metalHitSound.PlayOneShot(metalHitSound.clip);
+                }
+            }
         }
         if (MetalHitSound != null)
         {
