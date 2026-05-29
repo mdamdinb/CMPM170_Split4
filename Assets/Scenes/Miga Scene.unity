@@ -1837,7 +1837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Hud
   ammoCount: 500
   maxAmmoCount: 500
-  timerSeconds: 60
+  timerSeconds: 10
   maxTimerSeconds: 60
   gold: 0
   countTimerUp: 0
