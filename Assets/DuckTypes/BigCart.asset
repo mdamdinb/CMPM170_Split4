@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82dffe56df61434e91205853dc92190, type: 3}
   m_Name: BigCart
   m_EditorClassIdentifier: Assembly-CSharp::DuckData
-  speed: 1
+  speed: 2
   travelDistance: 15
-  pointValue: 100
-  spawnWeight: 2
+  pointValue: 72
+  spawnWeight: 5
   image: {fileID: 21300000, guid: ba6df6dabf443cd41b5aa4f245120052, type: 3}
