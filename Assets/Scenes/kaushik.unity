@@ -353,12 +353,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCount: 30
-  timerSeconds: 0
+  maxAmmoCount: 30
+  timerSeconds: 60
+  maxTimerSeconds: 60
   enemiesDestroyed: 0
-  countTimerUp: 1
-  showLabels: 1
-  fontSize: 32
-  screenPadding: 24
+  countTimerUp: 0
+  fontSize: 11
+  screenPadding: 6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
