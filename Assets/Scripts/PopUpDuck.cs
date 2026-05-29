@@ -6,6 +6,10 @@ public class PopUpDuck : MonoBehaviour
     [SerializeField] private float popUpDuration = 0.5f;
     [SerializeField] private float upRotation = 90f;
 
+    [Header("Duck Data")]
+    [SerializeField] private DuckData duckData;
+    [SerializeField] private GameObject targetObject;
+
     private bool hasPopped = false;
     private bool isHit = false;
     private Quaternion startRotation;
@@ -16,6 +20,11 @@ public class PopUpDuck : MonoBehaviour
     {
         startRotation = transform.localRotation;
         upRotation_quat = startRotation * Quaternion.Euler(0, 0, upRotation);
+
+        if (duckData != null && duckData.image != null)
+        {
+            ApplyImage();
+        }
     }
 
     void Update()
@@ -58,5 +67,44 @@ public class PopUpDuck : MonoBehaviour
         }
 
         transform.localRotation = foldRotation;
+    }
+
+    public void SetDuckData(DuckData data)
+    {
+        duckData = data;
+
+        if (duckData != null && duckData.image != null)
+        {
+            ApplyImage();
+        }
+    }
+
+    private void ApplyImage()
+    {
+        DuckTarget target = null;
+
+        if (targetObject != null)
+        {
+            target = targetObject.GetComponent<DuckTarget>();
+        }
+        else
+        {
+            target = GetComponentInChildren<DuckTarget>();
+        }
+
+        if (target != null && duckData.image != null)
+        {
+            target.ApplyTexture(duckData.image);
+        }
+    }
+
+    public int GetPointValue()
+    {
+        return duckData != null ? duckData.pointValue : 10;
+    }
+
+    public DuckData GetDuckData()
+    {
+        return duckData;
     }
 }

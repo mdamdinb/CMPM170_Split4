@@ -33,11 +33,7 @@ public class DuckSpawner : MonoBehaviour
     {
         spawnPool = new List<DuckData>();
 
-        if (duckTypes == null || duckTypes.Length == 0)
-        {
-            Debug.LogWarning("No duck types assigned to spawner!");
-            return;
-        }
+        if (duckTypes == null || duckTypes.Length == 0) return;
 
         int totalWeight = 0;
         foreach (DuckData duckType in duckTypes)
@@ -48,11 +44,7 @@ public class DuckSpawner : MonoBehaviour
             }
         }
 
-        if (totalWeight == 0)
-        {
-            Debug.LogWarning("Total spawn weight is 0!");
-            return;
-        }
+        if (totalWeight == 0) return;
 
         foreach (DuckData duckType in duckTypes)
         {
@@ -67,8 +59,6 @@ public class DuckSpawner : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log($"Spawn pool built with {spawnPool.Count} ducks");
     }
 
     private void SpawnDuck()
@@ -81,10 +71,10 @@ public class DuckSpawner : MonoBehaviour
             DuckData selectedType = spawnPool[randomIndex];
             spawnPool.RemoveAt(randomIndex);
 
-            DuckMovement movement = duck.GetComponent<DuckMovement>();
-            if (movement != null)
+            PopUpDuck popUpDuck = duck.GetComponent<PopUpDuck>();
+            if (popUpDuck != null)
             {
-                movement.SetDuckData(selectedType);
+                popUpDuck.SetDuckData(selectedType);
             }
         }
     }
