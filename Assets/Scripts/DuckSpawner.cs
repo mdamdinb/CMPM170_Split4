@@ -8,6 +8,7 @@ public class DuckSpawner : MonoBehaviour
     [SerializeField] private DuckData[] duckTypes;
     [SerializeField] private float spawnInterval = 2f;
     [SerializeField] private int maxDucks = 10;
+    [SerializeField] private bool moveBackward = false;
 
     private float nextSpawnTime;
     private int ducksSpawned;
@@ -75,6 +76,12 @@ public class DuckSpawner : MonoBehaviour
             if (popUpDuck != null)
             {
                 popUpDuck.SetDuckData(selectedType);
+            }
+
+            DuckMovement movement = duck.GetComponent<DuckMovement>();
+            if (movement != null)
+            {
+                movement.SetMoveBackward(moveBackward);
             }
         }
     }
