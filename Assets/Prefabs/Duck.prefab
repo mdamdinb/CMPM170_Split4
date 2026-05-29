@@ -160,6 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PopUpDuck
   popUpDuration: 0.5
   upRotation: 90
+  duckData: {fileID: 0}
+  targetObject: {fileID: 0}
 --- !u!114 &4261639404857906339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,8 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6db1e88e6cc464ab989506a9a6d68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuckMovement
-  duckData: {fileID: 0}
-  targetObject: {fileID: 0}
 --- !u!1 &5828420962645975214
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,3 +301,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7479ae8285b2a42a394a52e2dd772b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuckTarget
+  scorePopupPrefab: {fileID: 7682386777615026913, guid: 436426142a6b44a45a168343835b4b9e, type: 3}
+  scorePopupOffset: {x: 0.2, y: 0.2, z: 0}
