@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f82dffe56df61434e91205853dc92190, type: 3}
-  m_Name: Legendary
+  m_Name: Yone
   m_EditorClassIdentifier: Assembly-CSharp::DuckData
   speed: 1
   travelDistance: 15
-  pointValue: 100
-  spawnWeight: 2
-  image: {fileID: 21300000, guid: 44064f4c5df2a4455bb9de77035c218b, type: 3}
+  pointValue: 25
+  spawnWeight: 15
+  image: {fileID: 21300000, guid: 47bdb109adb6c6c4d9bf733c7282bfc6, type: 3}
