@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DuckSpawner : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class DuckSpawner : MonoBehaviour
 
     private float nextSpawnTime;
     private int ducksSpawned;
+    private List<DuckData> spawnPool;
 
     void Start()
     {
         nextSpawnTime = Time.time + spawnInterval;
+        BuildSpawnPool();
     }
 
     void Update()
@@ -26,29 +29,63 @@ public class DuckSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnDuck()
+    private void BuildSpawnPool()
     {
-        Debug.Log("SpawnDuck called");
-        GameObject duck = Instantiate(duckPrefab, transform.position, transform.rotation);
+        spawnPool = new List<DuckData>();
 
-        Debug.Log($"DuckTypes array length: {(duckTypes != null ? duckTypes.Length : 0)}");
-
-        if (duckTypes != null && duckTypes.Length > 0)
-        {
-            DuckData randomType = duckTypes[Random.Range(0, duckTypes.Length)];
-            Debug.Log($"Selected random type: {(randomType != null ? randomType.name : "null")}");
-
-            DuckMovement movement = duck.GetComponent<DuckMovement>();
-            Debug.Log($"DuckMovement found: {movement != null}");
-
-            if (movement != null)
-            {
-                movement.SetDuckData(randomType);
-            }
-        }
-        else
+        if (duckTypes == null || duckTypes.Length == 0)
         {
             Debug.LogWarning("No duck types assigned to spawner!");
+            return;
+        }
+
+        int totalWeight = 0;
+        foreach (DuckData duckType in duckTypes)
+        {
+            if (duckType != null)
+            {
+                totalWeight += duckType.spawnWeight;
+            }
+        }
+
+        if (totalWeight == 0)
+        {
+            Debug.LogWarning("Total spawn weight is 0!");
+            return;
+        }
+
+        foreach (DuckData duckType in duckTypes)
+        {
+            if (duckType != null)
+            {
+                float proportion = (float)duckType.spawnWeight / totalWeight;
+                int count = Mathf.RoundToInt(proportion * maxDucks);
+
+                for (int i = 0; i < count; i++)
+                {
+                    spawnPool.Add(duckType);
+                }
+            }
+        }
+
+        Debug.Log($"Spawn pool built with {spawnPool.Count} ducks");
+    }
+
+    private void SpawnDuck()
+    {
+        GameObject duck = Instantiate(duckPrefab, transform.position, transform.rotation);
+
+        if (spawnPool != null && spawnPool.Count > 0)
+        {
+            int randomIndex = Random.Range(0, spawnPool.Count);
+            DuckData selectedType = spawnPool[randomIndex];
+            spawnPool.RemoveAt(randomIndex);
+
+            DuckMovement movement = duck.GetComponent<DuckMovement>();
+            if (movement != null)
+            {
+                movement.SetDuckData(selectedType);
+            }
         }
     }
 }
