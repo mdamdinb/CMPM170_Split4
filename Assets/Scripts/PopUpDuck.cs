@@ -67,6 +67,7 @@ public class PopUpDuck : MonoBehaviour
         }
 
         transform.localRotation = foldRotation;
+        
     }
 
     public void SetDuckData(DuckData data)
@@ -81,18 +82,37 @@ public class PopUpDuck : MonoBehaviour
 
     private void ApplyImage()
     {
-        DuckTarget target = null;
+        if (duckData == null || duckData.image == null) return;
 
+        // If a specific target object is provided, try to set its SpriteRenderer first
         if (targetObject != null)
         {
-            target = targetObject.GetComponent<DuckTarget>();
-        }
-        else
-        {
-            target = GetComponentInChildren<DuckTarget>();
+            SpriteRenderer sr = targetObject.GetComponentInChildren<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.sprite = duckData.image;
+                return;
+            }
+
+            DuckTarget dt = targetObject.GetComponent<DuckTarget>();
+            if (dt != null)
+            {
+                dt.ApplyTexture(duckData.image);
+                return;
+            }
         }
 
-        if (target != null && duckData.image != null)
+        // Try to find a SpriteRenderer on this prefab's children
+        SpriteRenderer selfSr = GetComponentInChildren<SpriteRenderer>();
+        if (selfSr != null)
+        {
+            selfSr.sprite = duckData.image;
+            return;
+        }
+
+        // Fallback to any DuckTarget in children
+        DuckTarget target = GetComponentInChildren<DuckTarget>();
+        if (target != null)
         {
             target.ApplyTexture(duckData.image);
         }

@@ -16,4 +16,4 @@ MonoBehaviour:
   travelDistance: 15
   pointValue: 50
   spawnWeight: 8
-  image: {fileID: 21300000, guid: f5fcc62d632d1814fa06df5d8b98ad69, type: 3}
+  image: {fileID: 21300000, guid: b8960f0d3428b5440b3b2feb96476ea6, type: 3}
