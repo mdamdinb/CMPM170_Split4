@@ -14,6 +14,11 @@ public class DuckTarget : MonoBehaviour
             PopUpDuck popUpDuck = GetComponentInParent<PopUpDuck>();
             if (popUpDuck != null)
             {
+                int points = popUpDuck.GetPointValue();
+                if (ScoreManager.Instance != null)
+                {
+                    ScoreManager.Instance.AddScore(points);
+                }
                 popUpDuck.Hit();
             }
         }
@@ -21,23 +26,15 @@ public class DuckTarget : MonoBehaviour
 
     public void ApplyTexture(Sprite sprite)
     {
-        if (sprite == null)
-        {
-            Debug.LogWarning("ApplyTexture called with null sprite");
-            return;
-        }
-
-        Debug.Log($"Applying texture: {sprite.name}");
+        if (sprite == null) return;
 
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
-            Debug.Log("Found SpriteRenderer, applying sprite");
             spriteRenderer.sprite = sprite;
         }
         else
         {
-            Debug.Log("No SpriteRenderer, trying MeshRenderer");
             if (meshRenderer == null)
             {
                 meshRenderer = GetComponent<MeshRenderer>();

@@ -548,6 +548,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.306}
+--- !u!1 &74085262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74085264}
+  - component: {fileID: 74085263}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &74085263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74085262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7651f422a42d44f2b9c4ed06b5c53c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+--- !u!4 &74085264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74085262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.62785, y: 0.96, z: -13.83081}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &79721932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1870,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3585625489969740256, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
+      propertyPath: duckData
+      value: 
+      objectReference: {fileID: 11400000, guid: 44e8ff864696a4c158a677706a327bc5, type: 2}
     - target: {fileID: 5091005059459421957, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
       propertyPath: m_Name
       value: Duck (3)
@@ -2838,6 +2886,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3585625489969740256, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
+      propertyPath: duckData
+      value: 
+      objectReference: {fileID: 11400000, guid: 44e8ff864696a4c158a677706a327bc5, type: 2}
     - target: {fileID: 5091005059459421957, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
       propertyPath: m_Name
       value: Duck (2)
@@ -3633,6 +3685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3585625489969740256, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
+      propertyPath: duckData
+      value: 
+      objectReference: {fileID: 11400000, guid: 44e8ff864696a4c158a677706a327bc5, type: 2}
     - target: {fileID: 5091005059459421957, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
       propertyPath: m_Name
       value: Duck
@@ -3816,6 +3872,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3585625489969740256, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
+      propertyPath: duckData
+      value: 
+      objectReference: {fileID: 11400000, guid: 44e8ff864696a4c158a677706a327bc5, type: 2}
     - target: {fileID: 5091005059459421957, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
       propertyPath: m_Name
       value: Duck (1)
@@ -7577,3 +7637,4 @@ SceneRoots:
   - {fileID: 926196021}
   - {fileID: 1104811574}
   - {fileID: 374801302}
+  - {fileID: 74085264}
