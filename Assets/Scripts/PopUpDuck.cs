@@ -54,31 +54,16 @@ public class PopUpDuck : MonoBehaviour
             StartCoroutine(FoldForward());
 
             // Play hit sound
-            if (metalHitSound != null)
+            if (MetalHitSound != null)
             {
-                if (metalHitClip != null)
+                if (MetalHitClip != null)
                 {
-                    metalHitSound.PlayOneShot(metalHitClip);
+                    MetalHitSound.PlayOneShot(MetalHitClip);
                 }
-                else if (metalHitSound.clip != null)
+                else if (MetalHitSound.clip != null)
                 {
-                    metalHitSound.PlayOneShot(metalHitSound.clip);
+                    MetalHitSound.PlayOneShot(MetalHitSound.clip);
                 }
-            }
-        }
-        if (MetalHitSound != null)
-        {
-            if (MetalHitClip != null)
-            {
-                MetalHitSound.PlayOneShot(MetalHitClip);
-            }
-            else if (MetalHitSound.clip != null)
-            {
-                MetalHitSound.PlayOneShot(MetalHitSound.clip);
-            }
-            else
-            {
-                Debug.LogWarning("PopUpDuck: no MetalHitClip assigned for PlayOneShot.");
             }
         }
     }
