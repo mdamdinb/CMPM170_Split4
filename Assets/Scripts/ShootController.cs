@@ -11,6 +11,10 @@ public class ShootController : MonoBehaviour
     [SerializeField] private float shootForce = 12f;
     [SerializeField] private float fireRate = 0.5f;  // minimum seconds between shots
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource shootNoise;
+    [SerializeField] private AudioClip shootClip;
+
     private float lastFireTime = -999f;
     private Mouse mouse;
     private Keyboard keyboard;
@@ -57,6 +61,19 @@ public class ShootController : MonoBehaviour
 
         // Place it at the barrel before physics kicks in
         ballGO.transform.position = spawnPoint;
+
+        // Play shoot sound
+        if (shootNoise != null)
+        {
+            if (shootClip != null)
+            {
+                shootNoise.PlayOneShot(shootClip);
+            }
+            else if (shootNoise.clip != null)
+            {
+                shootNoise.PlayOneShot(shootNoise.clip);
+            }
+        }
 
         ball.Launch(spawnPoint, direction, shootForce);
     }

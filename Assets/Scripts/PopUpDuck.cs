@@ -10,6 +10,10 @@ public class PopUpDuck : MonoBehaviour
     [SerializeField] private DuckData duckData;
     [SerializeField] private GameObject targetObject;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource metalHitSound;
+    [SerializeField] private AudioClip metalHitClip;
+
     private bool hasPopped = false;
     private bool isHit = false;
     private Quaternion startRotation;
@@ -49,6 +53,19 @@ public class PopUpDuck : MonoBehaviour
         {
             isHit = true;
             StartCoroutine(FoldForward());
+
+            // Play hit sound
+            if (metalHitSound != null)
+            {
+                if (metalHitClip != null)
+                {
+                    metalHitSound.PlayOneShot(metalHitClip);
+                }
+                else if (metalHitSound.clip != null)
+                {
+                    metalHitSound.PlayOneShot(metalHitSound.clip);
+                }
+            }
         }
     }
 
