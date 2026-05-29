@@ -10,9 +10,8 @@ public class PopUpDuck : MonoBehaviour
     [SerializeField] private DuckData duckData;
     [SerializeField] private GameObject targetObject;
 
-    [Header("Audio")]
-    [SerializeField] private AudioSource metalHitSound;
-    [SerializeField] private AudioClip metalHitClip;
+    [SerializeField] private AudioSource MetalHitSound;
+    [SerializeField] private AudioClip MetalHitClip;
 
     private bool hasPopped = false;
     private bool isHit = false;
@@ -65,6 +64,21 @@ public class PopUpDuck : MonoBehaviour
                 {
                     metalHitSound.PlayOneShot(metalHitSound.clip);
                 }
+            }
+        }
+        if (MetalHitSound != null)
+        {
+            if (MetalHitClip != null)
+            {
+                MetalHitSound.PlayOneShot(MetalHitClip);
+            }
+            else if (MetalHitSound.clip != null)
+            {
+                MetalHitSound.PlayOneShot(MetalHitSound.clip);
+            }
+            else
+            {
+                Debug.LogWarning("PopUpDuck: no MetalHitClip assigned for PlayOneShot.");
             }
         }
     }
@@ -144,4 +158,5 @@ public class PopUpDuck : MonoBehaviour
     {
         return duckData;
     }
+    
 }

@@ -4423,6 +4423,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 495131365477969948, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1801010570041028256, guid: 280e9f0320d3e480abe56e8eb1570b3c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9183,7 +9187,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.2965, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1148054168}
@@ -9206,7 +9210,7 @@ MonoBehaviour:
   shootForce: 20
   fireRate: 0.2
   shootNoise: {fileID: 2100162435}
-  shootClip: {fileID: 8300000, guid: 302c45025ace44142bcaafb1758b4969, type: 3}
+  shootClip: {fileID: 8300000, guid: e672f14cec140480b8798e35bfa99bba, type: 3}
 --- !u!114 &2100162434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9236,7 +9240,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 302c45025ace44142bcaafb1758b4969, type: 3}
+  m_Resource: {fileID: 8300000, guid: e672f14cec140480b8798e35bfa99bba, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9246,8 +9250,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 3.8361588
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

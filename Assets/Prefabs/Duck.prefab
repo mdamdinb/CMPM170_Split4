@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 1801010570041028256}
   - component: {fileID: 3585625489969740256}
   - component: {fileID: 4261639404857906339}
-  - component: {fileID: 1880925455980172769}
+  - component: {fileID: 495131365477969948}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Untagged
@@ -255,8 +255,8 @@ MonoBehaviour:
   upRotation: 90
   duckData: {fileID: 0}
   targetObject: {fileID: 0}
-  metalHitSound: {fileID: 1880925455980172769}
-  metalHitClip: {fileID: 8300000, guid: 92b2eef9dd97145d79747c75dc7c654c, type: 3}
+  MetalHitSound: {fileID: 495131365477969948}
+  MetalHitClip: {fileID: 8300000, guid: a80fa7a5a05de4cbdaf3cca7bc4bf173, type: 3}
 --- !u!114 &4261639404857906339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6db1e88e6cc464ab989506a9a6d68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuckMovement
---- !u!82 &1880925455980172769
+--- !u!82 &495131365477969948
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,8 +280,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 92b2eef9dd97145d79747c75dc7c654c, type: 3}
-  m_PlayOnAwake: 0
+  m_Resource: {fileID: 8300000, guid: a80fa7a5a05de4cbdaf3cca7bc4bf173, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

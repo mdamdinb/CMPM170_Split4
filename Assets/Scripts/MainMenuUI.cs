@@ -9,7 +9,7 @@ public class MainMenuUI : MonoBehaviour
     public void OnPlayButtonPressed()
     {
         if (mainMenuPanel != null)
-            mainMenuPanel.SetActive(false);
+            mainMenuPanel.SetActive(true);
 
         if (readyCheckUI != null)
             readyCheckUI.StartReadyCheck();
