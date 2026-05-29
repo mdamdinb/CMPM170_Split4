@@ -33,8 +33,17 @@ public class ShootController : MonoBehaviour
 
         if (firePressed && Time.time >= lastFireTime + fireRate)
         {
-            Fire();
-            lastFireTime = Time.time;
+            if (Hud.Instance != null && Hud.Instance.ammoCount > 0)
+            {
+                Fire();
+                lastFireTime = Time.time;
+                Hud.Instance.ammoCount--;
+            }
+            else if (Hud.Instance == null)
+            {
+                Fire();
+                lastFireTime = Time.time;
+            }
         }
     }
 
