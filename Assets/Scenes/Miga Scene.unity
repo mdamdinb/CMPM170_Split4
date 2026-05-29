@@ -1835,10 +1835,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6cf083672624ab297157bd2fcb67bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hud
-  ammoCount: 500
-  maxAmmoCount: 500
-  timerSeconds: 10
-  maxTimerSeconds: 60
+  ammoCount: 200
+  maxAmmoCount: 200
+  timerSeconds: 100
+  maxTimerSeconds: 100
   gold: 0
   countTimerUp: 0
   hudScale: 2.5
@@ -2122,7 +2122,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f063745afd4d417f8c4773723a6bb1e, type: 2}
   - {fileID: 11400000, guid: 81323188349704bceb9eefd0d2cfed22, type: 2}
   spawnInterval: 2
-  maxDucks: 30
+  maxDucks: 50
   moveBackward: 0
 --- !u!4 &660907161
 Transform:
@@ -8668,7 +8668,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f063745afd4d417f8c4773723a6bb1e, type: 2}
   - {fileID: 11400000, guid: 81323188349704bceb9eefd0d2cfed22, type: 2}
   spawnInterval: 2
-  maxDucks: 30
+  maxDucks: 50
   moveBackward: 1
 --- !u!4 &1924636562
 Transform:
